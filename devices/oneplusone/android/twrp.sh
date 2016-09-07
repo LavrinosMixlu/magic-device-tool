@@ -29,7 +29,7 @@ fi
     fastboot reboot-bootloader
     sleep 4
     echo ""
-    echo "You can now boot into TWRP recovery"
+    echo "You can now boot into TWRP recovery a"
     sleep 1
     echo ""
     echo "Cleaning up.."
