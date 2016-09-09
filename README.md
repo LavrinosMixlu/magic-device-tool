@@ -47,8 +47,11 @@ Supported devices
 Usage
 
 $ git clone https://github.com/MariusQuabeck/magic-device-tool.git
+
 $ cd magic-device-tool
+
 $ chmod +x launcher.sh
+
 $ sudo ./launcher.sh
 
 TODO
