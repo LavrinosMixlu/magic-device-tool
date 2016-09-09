@@ -46,7 +46,7 @@ Supported devices
 
 Usage
 
-$ git clone https://github.com/MariusQuabeck/magic-device-tool.git
+$ git clone https://github.com/LavrinosMixlu/magic-device-tool
 
 $ cd magic-device-tool
 
