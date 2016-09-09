@@ -1,50 +1,45 @@
 #!/bin/bash
 chmod +x . ./devices/oneplusone/ubuntu/*.sh
 chmod +x . ./devices/oneplusone/android/*.sh
+chmod +x . ./devices/generic/ubuntu/*.sh
+chmod +x . ./devices/generic/android/*.sh
 clear
-echo ""
-echo "OnePlus One - bacon"
-echo ""
-echo ""
+zenity --info --title "OSwitcher" --text "OnePlus One - bacon" --width=300 --height=200
 sleep 1
-echo "Ubuntu: "
-echo ""
-echo "[1] Install Ubuntu"
-echo "[2] Install OpenStore"
-echo ""
-echo ""
-echo "Android: "
-echo ""
-echo "[3] Back Up your Android device"
-echo
-echo ""
-echo "[4] Install Cyanogenmod 13"
-echo ""
-echo "[5] Install TWRP recovery"
-echo "[6] Lock/Unlock bootloader (Will wipe existing apps/data)"
-echo ""
-echo ""
-echo "[7] Back to menu "
-echo ""
-echo -n "Enter option: "; read option
-if [ "$option" = "1" ]; then
-  . ./devices/oneplusone/ubuntu/ubuntu.sh
-elif [ "$option" = "2" ]; then
-  . ./devices/oneplusone/ubuntu/openstore.sh
-elif [ "$option" = "3" ]; then
-  . ./devices/oneplusone/android/backup.sh
-elif [ "$option" = "4" ]; then
-  . ./devices/oneplusone/android/cyanogenmod.sh
-elif [ "$option" = "5" ]; then
-  . ./devices/oneplusone/android/twrp.sh
-elif [ "$option" = "6" ]; then
-  . ./devices/oneplusone/android/bootloader.sh
-elif [ "$option" = "7" ]; then
-  . ./launcher.sh
+opt1="Install Ubuntu"
+opt2="Install OpenStore"
+
+opt3="Install Cyanogenmod 13"
+opt4="Install Cyanogenmod 13 without Gapps"
+opt5="Install TWRP recovery"
+opt6="Back Up your Android device"
+opt7="Lock/Unlock bootloader (Will wipe existing apps/data)"
+
+opt8="Back to menu"
+
+opt9="Ubuntu"
+opt10="Android"
+
+int=`zenity --height=275 --list --radiolist --title "OSwitcher | OnePlus One - bacon" --text 'Select the OS to be installed:' --column 'Select...' --column 'Options' --column 'OS' TRUE "$opt1" "$opt9" FALSE "$opt2" "$opt9" FALSE "$opt3" "$opt10" FALSE "$opt4" "$opt10" FALSE "$opt5" "$opt10" FALSE "$opt6" "$opt10" FALSE "$opt7" "$opt10" FALSE "$opt8" " " --width=610 --height=300`
+
+
+if   [ "$int" == 'Install Ubuntu' ]; then
+	. ./devices/oneplusone/ubuntu/ubuntu.sh
+elif [ "$int" == 'Install OpenStore' ]; then
+  	. ./devices/generic/ubuntu/openstore.sh
+elif [ "$int" == 'Install Cyanogenmod 13' ]; then
+  	. ./devices/oneplusone/android/cyanogenmod.sh
+elif [ "$int" == 'Install Cyanogenmod 13 without Gapps' ]; then
+  	. ./devices/oneplusone/android/cyanogenmodwogapps.sh
+elif [ "$int" == 'Install TWRP recovery' ]; then
+  	. ./devices/oneplusone/android/twrp.sh
+elif [ "$int" == 'Back Up your Android device' ]; then
+  	. ./devices/generic/android/backup.sh
+elif [ "$int" == 'Lock/Unlock bootloader (Will wipe existing apps/data)' ]; then
+  	. ./devices/oneplusone/android/bootloader.sh
+elif [ "$int" == 'Back to menu' ]; then
+  	. ./launcher.sh
 else
-  echo ""
-  echo "Invalid Option"
-  echo ""
-  echo "Exiting script. Bye Bye"
-  exit
+	zenity --warning --title "OSwitcher | Invalid Option" --text "Something went wrong try again" --width=300 --height=200  	
+  	exit
 fi

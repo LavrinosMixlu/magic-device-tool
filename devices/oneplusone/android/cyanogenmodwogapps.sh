@@ -1,7 +1,7 @@
 clear
-zenity --info --title "OSwitcher" --text "Installing Cyanogenmod 13" --width=300 --height=200
+zenity --info --title "OSwitcher" --text "Installing Cyanogenmod 13 without Gapps" --width=300 --height=200
 sleep 1
-zenity --info --title "OSwitcher | Installing Cyanogenmod 13" --text "Please boot your Oneplus One into bootloader/fastboot mode by pressing Power AND Volume Up (+)" --width=300 --height=200
+zenity --info --title "OSwitcher | Installing Cyanogenmod 13 without Gapps" --text "Please boot your Oneplus One into bootloader/fastboot mode by pressing Power AND Volume Up (+)" --width=300 --height=200
 sleep 2
 zenity --question --text "Is your OnePlus One in fastboot mode now?" --ok-label "Nope" --cancel-label="Yeah" --width=300 --height=200
 sleep 1
@@ -28,11 +28,6 @@ then
   zenity --info --title "OSwitcher | Downloading" --text "Downloading Cyanogenmod 13.."
   sleep 1
   wget -c --quiet --show-progress --tries=10 https://download.cyanogenmod.org/get/bacon-snapshot.zip
-  echo ""
-  zenity --info --title "OSwitcher | Downloading" --text "Downloading Open Gapps.."
-  sleep 1
-  wget -c --quiet --show-progress --tries=10 http://people.ubuntu.com/~misterq/magic-device-tool/gapps/open_gapps-arm-6.0-nano-20160811.zip
-  sleep 2
   clear
   zenity --info --title "OSwitcher | Installing" --text "Installing TWRP recovery"
   fastboot flash recovery twrp-3.0.2-0-bacon.img
@@ -58,9 +53,6 @@ then
   zenity --info --title "OSwitcher | Installation Progress" --text "Installing Cyanogenmod.."
   adb shell twrp install /sdcard/bacon-snapshot.zip
   sleep 1
-  zenity --info --title "OSwitcher | Installation Progress" --text "Installing GApps.."
-  sleep 3
-  adb shell twrp install /sdcard/open_gapps-arm-6.0-nano-20160811.zip
   zenity --info --title "OSwitcher | Installation Progress" --text "Wipe cache.."
   adb shell twrp wipe cache
   adb shell twrp wipe dalvik
@@ -69,9 +61,8 @@ then
   sleep 5
   zenity --info --title "OSwitcher | Installation Progress" --text "Cleaning up.."
   rm -f ~/.AttachedDevices
-  echo ""
   sleep 1
-  zenity --info --title "OSwitcher | Enjoy your new OS" --text "I hope that you will enjoy your new OS"
+  zenity --info --title "Enjoy your new OS" --text "I wish you to enjoy your new OS"
   sleep 1
 
 else
