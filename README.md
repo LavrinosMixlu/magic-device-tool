@@ -30,19 +30,18 @@ Requirements
 
 Supported devices
 
-    BQ Aquaris E4.5 (krillin)
-    BQ Aquaris E5 HD (vegetahd)
-    BQ Aquaris M10 HD (cooler)
-    BQ Aquaris M10 FHD (frieza)
-    Meizu MX 4 (arale)
-    Meizu Pro 5 (turbo)
-    LG Nexus 4 (mako)
-    LG Nexus 5 (hammerhead)
-    Asus Nexus 7 2013 WiFi (flo)
-    Asus Nexus 7 2013 LTE (deb)
-    Samsung Nexus 10 (manta)
-    OnePlus One (bacon)
-    Fairphone 2 (FP2) !!May not work!!
+    BQ Aquaris E4.5 (krillin)       coming soon
+    BQ Aquaris E5 HD (vegetahd)     coming soon
+    BQ Aquaris M10 HD (cooler)      coming soon
+    BQ Aquaris M10 FHD (frieza)     coming soon
+    Meizu MX 4 (arale)              coming soon
+    Meizu Pro 5 (turbo)             coming soon
+    LG Nexus 4 (mako)               coming soon
+    LG Nexus 5 (hammerhead)         coming soon
+    Asus Nexus 7 2013 WiFi (flo)    coming soon
+    Asus Nexus 7 2013 LTE (deb)     coming soon
+    Samsung Nexus 10 (manta)        coming soon
+    OnePlus One (bacon)             Supported
 
 Usage
 
